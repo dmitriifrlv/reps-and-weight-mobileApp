@@ -1,5 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import {
   StyleSheet,
   Text,
@@ -11,21 +13,23 @@ import {
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Reps & Weight</Text>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="email" />
-        <TextInput style={styles.input} placeholder="password" />
-      </View>
-      <View style={styles.footer}>
-        <Button
-          title="Create Account"
-          accessibilityLabel="Create account button"
-        />
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Reps & Weight</Text>
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.input} placeholder="email" />
+          <TextInput style={styles.input} placeholder="password" />
+        </View>
+        <View style={styles.footer}>
+          <Button
+            title="Create Account"
+            accessibilityLabel="Create account button"
+          />
+        </View>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
