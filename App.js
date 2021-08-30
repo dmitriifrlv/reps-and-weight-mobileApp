@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import Login from "./screens/Login";
 import {
   StyleSheet,
   Text,
@@ -10,25 +10,17 @@ import {
   SafeAreaView,
   Button,
 } from "react-native";
+import Home from "./screens/Home";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Reps & Weight</Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="email" />
-          <TextInput style={styles.input} placeholder="password" />
-        </View>
-        <View style={styles.footer}>
-          <Button
-            title="Create Account"
-            accessibilityLabel="Create account button"
-          />
-        </View>
-      </SafeAreaView>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
